@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-
 const withFooter = (WrappedComponent) => {
       class WithFooter extends Component {
+            constructor(props){
+                  super(props)
             
+            }
+          
             render() {
                   let divStyle ={
                         position: 'fixed',
@@ -17,7 +20,9 @@ const withFooter = (WrappedComponent) => {
                        'box-shadow': '5px 10px green'
                   }
                 
-                  return <WrappedComponent footerStyle={divStyle} name={"Bunny"} />
+                  return <WrappedComponent footerStyle={divStyle} name={"Bunny"} {...this.props}/>
+                  
+                 
             }
       }
 
